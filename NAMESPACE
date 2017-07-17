@@ -1,0 +1,6 @@
+exportPattern("^[[:alpha:]]+")
+importFrom("grDevices", "rainbow")
+  importFrom("graphics", "abline", "axTicks", "axis", "lines", "mtext",
+             "par", "plot", "points", "title")
+  importFrom("stats", "ecdf", "optimize", "qnorm", "quantile", "rexp",
+             "runif", "sd")
