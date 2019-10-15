@@ -6,7 +6,12 @@ egpd<-function(x,evi=NA,heavy=NA)
   fk<-function(sigma) -mean(log(1-x/sigma))
   fp<-function(sigma) length(x)*(-log(fk(sigma)*sigma)+fk(sigma)-1)
   fk2<-function(sigma) -(evi-mean(log(1-x/sigma)))^2
-  if (is.na(evi)) sigma<-optimize(fp,interval=int,maximum=T)$maximum
-  else sigma<-optimize(fk2,interval=int,maximum=T)$maximum
-  list(evi=-fk(sigma),psi=fk(sigma)*sigma)
+  if (is.na(evi))
+  {
+    sigma <- optimize(fp, interval = int, maximum = T)$maximum
+    }else{
+      sigma <- optimize(fk2, interval = int, maximum = T)$maximum
+  } 
+  list(evi=-fk(sigma), evi.var=(1-fk(sigma))^2/length(x), psi=fk(sigma)*sigma, 
+       psi.var=(2*(fk(sigma)*sigma)^2)*(1-fk(sigma))/length(x))
 }

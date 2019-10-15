@@ -1,4 +1,5 @@
-cvplot<-function(data, threshold = NA, nextremes = NA, omit=4, evi=0, main="CVplot", conf.level=0.90, ...)
+cvplot<-function(data, threshold = NA, nextremes = NA, omit=4, evi=0, main="CVplot", conf.level=0.90, xlab="Excluded sample size",
+                 ylab="Coefficient of variation", col="blue", ...)
 {
   #####################################################
   #### controls
@@ -58,8 +59,7 @@ cvplot<-function(data, threshold = NA, nextremes = NA, omit=4, evi=0, main="CVpl
   #####################################################
   par(mar = c(5, 6, 5, 3))
   ifelse(nevi!=0,setpoint<-c(rcv[!is.na(rcv)],u[ksr,],l[ksr,]),setpoint<-rcv[!is.na(rcv)])
-  plot(ks+k0-1,rcv,type="l",ylim=c(min(setpoint),max(setpoint)),
-       xlab="Excluded sample size",ylab=paste("Coefficient of variation"),col="blue",...)
+  plot(ks+k0-1,rcv,type="l",ylim=c(min(setpoint),max(setpoint)), xlab=xlab, ylab=ylab, col=col)
   title(main=main,outer=F,adj=1,line=4,cex.main=1)
   mtext("Threshold",side=3,line=2.5,cex=0.66)
   ti<-c(1+(k0-1),sort(axTicks(1))[c(-1,-(length(axTicks(1))))],min(max(axTicks(1)),n+(k0-1)))

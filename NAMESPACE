@@ -1,6 +1,13 @@
 exportPattern("^[[:alpha:]]+")
+
+S3method(print, fitpot)
+S3method(summary, fitpot)
+S3method(confint, fitpot)
+S3method(print, summary.fitpot)
+
 importFrom("grDevices", "rainbow")
-  importFrom("graphics", "abline", "axTicks", "axis", "lines", "mtext",
-             "par", "plot", "points", "title")
-  importFrom("stats", "ecdf", "optimize", "qnorm", "quantile", "rexp",
-             "runif", "sd")
+importFrom("graphics", "abline", "axTicks", "axis", "lines", "mtext",
+           "par", "plot", "points", "title")
+importFrom("stats", "ecdf", "optimize", "qnorm", "quantile", "rexp",
+           "runif", "sd", "qt", "optimHess", "pexp", "qexp")
+        

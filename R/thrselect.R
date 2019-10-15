@@ -4,7 +4,7 @@ thrselect<-function(data, threshold = NA, nextremes = NA, omit = 16, evi = NA, m
   #### controls and inizialization of vars
   #####################################################
   omit<-floor(omit)
-  if (omit<2) warning("The parameter omit have to be bigger than 1",call.=TRUE)
+  if (omit<2) warning("The parameter omit has to be bigger than 1",call.=TRUE)
   omit<-max(omit,2)
   data <- as.numeric(data)
   data<-data[!is.na(data)]

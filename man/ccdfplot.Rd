@@ -9,7 +9,8 @@
   Plot of complementary empirical distribution function of a sample and the complementary distribution function from peaks-over-threshold model.
 }
 \usage{
-  ccdfplot(data, pars=NA, log="y", from=NA, main="Complementary cdf", ...)
+  ccdfplot(data, pars=NA, log="y", from=NA, ci=FALSE, main="Complementary cdf", 
+  xlab="data", ylab="ccdf", ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -17,7 +18,7 @@
   a numeric vector. 
 }
   \item{pars}{
-a numeric vector with the set of parameters of
+a list with the set of parameters of
  peaks-over-threshold model.
 }
   \item{log}{
@@ -26,10 +27,19 @@ to be logarithmic, \code{y} if the y axis is to be logarithmic and \code{xy}
 or \code{yx} if both axes are to be logarithmic.
 }
   \item{from}{
-the origen of x-axis in the plot
+the origen of x-axis in the plot.
+}
+  \item{ci}{
+should confidence bands be plotted. Defaults to \code{FALSE}.
 }
   \item{main}{
 an overall title for the plot.
+}
+  \item{xlab}{
+horizontal axis label. Defaults to \code{data}.
+}
+  \item{ylab}{
+vertical axis label. Defaults to \code{ccdf}.
 }
   \item{...}{
 usual graphic parameters.
@@ -61,8 +71,8 @@ Joan del Castillo, David Moriña Soler and Isabel Serra
 }
 
 \examples{
-data(d1)
-ccdfplot(d1)
+data(iFFT)
+ccdfplot(iFFT)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

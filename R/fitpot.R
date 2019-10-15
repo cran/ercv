@@ -1,5 +1,6 @@
 fitpot<-function (data, threshold = NA, nextremes = NA, evi = NA) 
 {
+  Call <- match.call()
   data <- as.numeric(data)
   data <- data[!is.na(data)]
   data <- sort(data)
@@ -18,8 +19,20 @@ fitpot<-function (data, threshold = NA, nextremes = NA, evi = NA)
                   0.1, T, F)
   prob <- length(xdat)/n
   aux <- egpd(xdat, evi = evi, heavy = tes)
+  aux2 <- egpd(xdat, evi=NA, heavy=tes)
   if (is.na(evi)) 
     evi <- aux$evi
+    var.evi <- aux2$evi.var
   psi <- aux$psi
-  c(evi = evi, psi = psi, threshold = threshold, prob = prob)
+  var.psi <- aux2$psi.var
+  out <- list()
+  out$coeff <- c(evi = evi, psi = psi, threshold = threshold, prob = prob)
+  class(out) <- "fitpot"
+  attr(out, "Call") <- Call
+  attr(out, "evi.sd") <- sqrt(var.evi)
+  attr(out, "psi.sd") <- sqrt(var.psi)
+  names(attr(out, "evi.sd")) <- "evi"
+  names(attr(out, "psi.sd")) <- "psi"
+  attr(out, "df.residual") <- length(xdat)-1
+  return(out)
 }

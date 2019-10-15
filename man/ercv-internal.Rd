@@ -4,6 +4,10 @@
 \alias{frcv}
 \alias{Tms.pvalue}
 \alias{egpd}
+\alias{print.fitpot}
+\alias{summary.fitpot}
+\alias{print.summary.fitpot}
+\alias{confint.fitpot}
 
 \title{Internal ercv functions}
 \description{Internal ercv functions}
@@ -11,6 +15,10 @@
 frcv(data, Ps)
 Tms.pvalue(n, tms, m, evi, hat=TRUE, omit=16, nsim=100)
 egpd(x, evi=NA, heavy=NA)
+\method{print}{fitpot}(x, ...)
+\method{summary}{fitpot}(object, ...)
+\method{print.summary}{fitpot}(x, ...)
+\method{confint}{fitpot}(object, parm, level=0.95, ...)
 }
 
 \details{These functions are not to be called by the user}

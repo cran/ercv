@@ -9,7 +9,7 @@ Quantile function
 Quantile function from the peaks-over-threshold model.
 }
 \usage{
-qpot(p, pars, lower.tail=TRUE)
+qpot(p, pars, lower.tail=TRUE, log.p=FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -22,6 +22,9 @@ a numeric vector with the set of parameters of
 }
  \item{lower.tail}{
  logical; if \code{TRUE} (default), probabilities are \eqn{P[X \leq x]} otherwise, \eqn{P[X > x]}.
+ }
+  \item{log.p}{
+ logical; if \code{TRUE} probabilities are given as log(p).
  }
 }
 
@@ -54,7 +57,7 @@ qpot(0.1, c(evi=0.1, psi=0.2, threshold=0.3, prob=0.4), lower.tail=FALSE)
 x<-runif(10000)
 x<-c(x^-1,x)
 pars<-fitpot(x,1)
-qpot(0.5/10,pars,lower.tail=FALSE) #the true value is 10
+qpot(0.5/10,pars$coeff,lower.tail=FALSE) #the true value is 10
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

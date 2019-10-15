@@ -14,8 +14,8 @@ Fitting tails by the empirical residual coefficient of variation.
 \tabular{ll}{
 Package: \tab ercv\cr
 Type: \tab Package\cr
-Version: \tab 1.0.0\cr
-Date: \tab 2017-04-01\cr
+Version: \tab 1.0.1\cr
+Date: \tab 2019-09-19\cr
 License: \tab GPL version 2 or newer\cr
 LazyLoad: \tab yes\cr
 }

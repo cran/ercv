@@ -10,7 +10,8 @@
 }
 \usage{
 cvplot(data, threshold = NA, nextremes = NA, omit=4, evi=0, main="CVplot", 
-       conf.level=0.90, ...)
+       conf.level=0.90, xlab="Excluded sample size", 
+       ylab="Coefficient of variation", col="blue", ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -37,6 +38,15 @@ extreme value index. In particular, the shape parammeter
   }
   \item{conf.level}{
   confidence level of the interval (defaults to 0.90).
+  }
+  \item{xlab}{
+  horizontal axis label. Defaults to \code{Excluded sample size}.
+  }
+  \item{ylab}{
+  vertical axis label. Defaults to \code{Coefficient of variation}.
+  }
+  \item{col}{
+  plot color. Defaults to \code{blue}.
   }
   \item{...}{
   Usual graphic parameters.
@@ -71,8 +81,8 @@ Joan del Castillo, David Moriña Soler and Isabel Serra
 data("moby", package = "poweRlaw")
 cvplot(moby, main="MobyDick")
 
-data(d1)
-cvplot(d1, threshold=median(d1), main="D1") 
+data(iFFT)
+cvplot(iFFT, threshold=median(iFFT), main="iFFT") 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
