@@ -42,7 +42,7 @@ number of simulations.
 
 \value{
 A \code{data.frame} containing the following columns:
-\itemize{
+
  \item{nextremes}{
  the number of upper extremes to be used.
  }
@@ -58,7 +58,7 @@ A \code{data.frame} containing the following columns:
  \item{pvalue}{
  p-value associated to \code{tms}.
  }
-}
+
 }
 
 \references{
@@ -80,8 +80,10 @@ Joan del Castillo, David Moriña Soler and Isabel Serra
 }
 
 \examples{
-data("nidd.thresh",package = "evir")
-Tm(nidd.thresh,evi=0, nextremes = 75)
+if (requireNamespace("evir", quietly = TRUE)) {
+  data("nidd.thresh", package = "evir")
+  Tm(nidd.thresh, evi=0, nextremes = 75)
+}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

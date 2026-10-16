@@ -32,7 +32,6 @@ extreme value index. In particular, the shape parammeter
 
 \value{
 A \code{data.frame} with the following columns:
-\itemize{
  \item{evi}{
  extreme value index. In particular, the shape parammeter of a generalized Pareto
 distribution.
@@ -47,7 +46,6 @@ applied.
  \item{prob}{
  proportion of size of data corresponding to the upper extremes modelled with generalized pareto distribution.
  }
-}
 }
 
 \references{
@@ -70,8 +68,10 @@ Joan del Castillo, David Moriña Soler and Isabel Serra
 }
 
 \examples{
-data("nidd.thresh", package = "evir")
-fitpot(nidd.thresh)
+if (requireNamespace("evir", quietly = TRUE)) {
+  data("nidd.thresh", package = "evir")
+  fitpot(nidd.thresh)
+}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

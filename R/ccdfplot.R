@@ -11,7 +11,7 @@ ccdfplot<-function(data, pars=NA, log="y", from=NA, ci=FALSE, main="Complementar
                       psi.ll=rep(NA,length(pars)), psi.ul=rep(NA,length(pars)))
     for (i in 1:length(pars))
     {
-      if (class(pars[[i]])=="fitpot")
+      if (inherits(pars[[i]], "fitpot"))
       {
         cis$evi.ll[i] <- lapply(pars, confint.fitpot)[[i]][1, 1]
         cis$evi.ul[i] <- lapply(pars, confint.fitpot)[[i]][1, 2]

@@ -50,7 +50,6 @@ printed. In any case, the full solution is the output of the function.
 
 \value{
 A list including two \code{data.frame} (solution and options). Each of the \code{data.frame} contains the following columns:
-\itemize{
  \item{m}{
  number of thresholds for testing tail index.
  }
@@ -76,7 +75,7 @@ A list including two \code{data.frame} (solution and options). Each of the \code
  p-value associated to \code{tms}.
  }
 }
-}
+
 
 \references{
 del Castillo, J. and Padilla, M. (2016). Modeling extreme values by the residual coefficient of variation. SORT Statist. Oper. Res. Trans. \bold{40}(2), 303-320.
@@ -98,8 +97,10 @@ Joan del Castillo, David Moriña Soler and Isabel Serra
 }
 
 \examples{
-data("nidd.thresh", package = "evir")
-thrselect(nidd.thresh, nsim=500)
+if (requireNamespace("evir", quietly = TRUE)) {
+  data("nidd.thresh", package = "evir")
+  thrselect(nidd.thresh, nsim=500)
+}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

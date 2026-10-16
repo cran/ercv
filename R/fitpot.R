@@ -16,7 +16,7 @@ fitpot<-function (data, threshold = NA, nextremes = NA, evi = NA)
   }
   xdat <- data[data >= threshold] - threshold
   tes <- ifelse(Tm(xdat, nsim = 0, m = 5, omit = 8)["evi"] > 
-                  0.1, T, F)
+                  0.1, TRUE, FALSE)
   prob <- length(xdat)/n
   aux <- egpd(xdat, evi = evi, heavy = tes)
   aux2 <- egpd(xdat, evi=NA, heavy=tes)

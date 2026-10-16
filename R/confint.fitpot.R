@@ -1,6 +1,6 @@
 confint.fitpot <- function(object, parm, level=0.95, ...)
 {
-  if(class(object)!="fitpot") stop("Object should be of class fitpot")
+  if(!inherits(object, "fitpot")) stop("Object should be of class fitpot")
   cf <- object$coeff
   ses <- c(attr(object, "evi.sd"), attr(object, "psi.sd"))
   if (length(ses)==2)

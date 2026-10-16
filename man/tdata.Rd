@@ -52,8 +52,10 @@ Joan del Castillo, David Moriña Soler and Isabel Serra
 }
 
 \examples{
-data("danish", package = "evir")
-tdata(danish)
+if (requireNamespace("evir", quietly = TRUE)) {
+  data("danish", package = "evir")
+  tdata(danish)
+}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

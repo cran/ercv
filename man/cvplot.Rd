@@ -78,9 +78,10 @@ Joan del Castillo, David Moriña Soler and Isabel Serra
 }
 
 \examples{
-data("moby", package = "poweRlaw")
-cvplot(moby, main="MobyDick")
-
+\dontrun{
+  data("moby", package = "poweRlaw")
+  cvplot(moby, main="MobyDick")
+}
 data(iFFT)
 cvplot(iFFT, threshold=median(iFFT), main="iFFT") 
 }

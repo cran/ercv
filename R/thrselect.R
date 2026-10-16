@@ -38,6 +38,6 @@ thrselect<-function(data, threshold = NA, nextremes = NA, omit = 16, evi = NA, m
   options<-data.frame(m=seq(m,0,-1),nextremes=Ns,threshold=Qs+threshold,rcv=Cs,cvopt=CXs,evi=XIs,tms=TMSs,pvalue=PVs)[1:m,]
   solution<-options[options$pvalue>(1-conf.level),][1,]
   outlist<-list(solution=solution,options=options)
-  if (oprint==T) print(solution)
+  if (oprint == TRUE) print(solution)
   thrselect<-outlist
 }

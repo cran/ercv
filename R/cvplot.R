@@ -64,7 +64,7 @@ cvplot<-function(data, threshold = NA, nextremes = NA, omit=4, evi=0, main="CVpl
   mtext("Threshold",side=3,line=2.5,cex=0.66)
   ti<-c(1+(k0-1),sort(axTicks(1))[c(-1,-(length(axTicks(1))))],min(max(axTicks(1)),n+(k0-1)))
   lti<-data[ti-(k0-1)]+threshold
-  axis(3,at=ti,labels=paste(format(signif(lti,2))), tick = T,cex.axis=0.66)
+  axis(3,at=ti,labels=paste(format(signif(lti,2))), tick = TRUE,cex.axis=0.66)
   #####################################################
   #### plot of confidence intervals
   #####################################################
